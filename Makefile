@@ -15,7 +15,7 @@ CC= gcc
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  main.c
+SRCS=  main.c actions.c actions2.c actions3.c
 
 OBJ = $(SRCS:.c=.o)
 

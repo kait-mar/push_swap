@@ -20,20 +20,21 @@ t_swap	parse_arguments(int argc, char **argv)
 	{
 		if (!valid(argv[i + 1]))
 			print_error(p);
-		p.a[i] = no_dup(p, argv[i + 1], i);
+		p.a[i] = no_dup(p, argv, i);
 		i++;
 	}
+	p.len_a = argc - 1;
 	return (p);
 }
 
-int	no_dup(t_swap p, char *arg, int i)
+int	no_dup(t_swap p, char **arg, int i)
 {
 	int	res;
 
-	res = ft_atoi(argv);
+	res = ft_atoi(arg[i + 1]);
 	while (i--)
 	{
-		if (res = argv[i])
+		if (res == p.a[i])
 			print_error(p);
 	}
 	return (res);
@@ -53,6 +54,23 @@ int	valid(char *argv)
 	return (1);
 }
 
+void	print_arguments(t_swap p)
+{
+	int	i;
+
+	i = 0;
+	while (i < p.len_a)
+	{
+		printf("%d\n", p.a[i++]);
+	}
+	printf("***************\n");
+	i = 0;
+	while (i < p.len_b)
+	{
+		printf("%d\n", p.b[i++]);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_swap	p;
@@ -60,5 +78,8 @@ int	main(int argc, char **argv)
 	if (argc < 1)
 		return (0);
 	p = parse_arguments(argc, argv);
+	p = rra(p);
+	p = pb(p);
+	print_arguments(p);
 	return (1);
 }
