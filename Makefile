@@ -11,11 +11,11 @@
 # **************************************************************************** #
 NAME= push_swap
 
-CC= gcc
+CC= gcc -g
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  main.c actions.c actions2.c actions3.c
+SRCS=  main.c actions.c actions2.c actions3.c swap.c insertion.c
 
 OBJ = $(SRCS:.c=.o)
 

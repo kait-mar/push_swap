@@ -2,6 +2,7 @@
 
 t_swap  ss(t_swap p)
 {
+    count++;
     p = sa(p);
     return (sb(p));
 }
@@ -10,14 +11,16 @@ t_swap  realloc_a2(t_swap p, int c)
 {
     int *a;
     int i;
+    int j;
 
     a = malloc(sizeof(int) * (p.len_b + 1));
     i = 0;
+    j = 0;
     a[i++] = c;
-    while (i < p.len_b + 1)
+    while (j < p.len_b)
     {
-        a[i] = p.b[i - 1];
-        i++;
+        a[i++] = p.b[j++];
+       // i++;
     }
     free(p.b);
     (p.len_b)++;
@@ -29,13 +32,14 @@ t_swap  realloc_b2(t_swap p)
 {
     int *b;
     int i;
+    int j;
 
     i = 0;
+    j = 1;
     b = malloc(sizeof(int) * (p.len_a - 1));
-    while (i < p.len_a)
+    while (j < p.len_a)
     {
-        b[i] = p.a[i + 1];
-        i++;
+        b[i++] = p.a[j++];
     }
     free(p.a);
     (p.len_a)--;
@@ -47,6 +51,7 @@ t_swap  pb(t_swap p)
 {
     int c;
 
+    count++;
     if (p.len_a == 0)
         return (p);
     c = p.a[0];
@@ -61,6 +66,7 @@ t_swap  ra(t_swap p)
     int i;
 
     i = 0;
+    count++;
     c = p.a[0];
     while (i < p.len_a - 1)
     {

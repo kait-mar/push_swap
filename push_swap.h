@@ -13,6 +13,7 @@ typedef struct s_swap
     int len_b;
 }           t_swap;
 
+int count;
 t_swap	parse_arguments(int argc, char **argv);
 int	valid(char *arg);
 void	print_error(t_swap p);
@@ -33,6 +34,18 @@ t_swap  rr(t_swap p);
 t_swap  rra(t_swap p);
 t_swap  rrb(t_swap p);
 t_swap  rrr(t_swap p);
+t_swap  swap_3elements_a(t_swap p);
+int max(int *a, int len);
+int min(int *a, int len);
+t_swap  swap_3elements_b(t_swap p);
+t_swap	first_5elements(t_swap p);
+int     which_part(int *a, int c, int len);
+t_swap  sort_insertion(t_swap p);
+int     how_many_moves(int c, t_swap p);
+t_swap	push_to_b(t_swap p, int c, int check);
+int	from_min(int *a, int len, int m);
+t_swap  sort_100(t_swap p);
+int	construct_chunk(t_swap p, int mine, int chunk);
 
 
 #endif
