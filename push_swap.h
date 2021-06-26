@@ -46,6 +46,6 @@ t_swap	push_to_b(t_swap p, int c, int check);
 int	from_min(int *a, int len, int m);
 t_swap  sort_100(t_swap p);
 int	construct_chunk(t_swap p, int mine, int chunk);
-
+t_swap  push_big(t_swap p); 
 
 #endif

@@ -166,18 +166,16 @@ int	main(int argc, char **argv)
 	if (argc < 1)
 		return (0);
 	p = parse_arguments(argc, argv);
-	print_arguments(p);
+	//print_arguments(p);
 	if (p.len_a == 0)
 		return (1);
-	p = pb(p);
-	p =pb(p);
 	if (p.len_a <= 3)
 		p = swap_3elements_a(p);
 	else if (p.len_a <= 5)
 		p = sort_insertion(p);
 	else if (p.len_a <= 100)
 		p = sort_100(p);
-	print_arguments(p);
+	//print_arguments(p);
 	return (1);
 }
 

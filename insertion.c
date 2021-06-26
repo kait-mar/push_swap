@@ -119,14 +119,13 @@ t_swap  sort_100(t_swap p)
 	int	ch;
 	//int	debug;
 
-	chunks = p.len_a / 4;
+	chunks = p.len_a / 5;
 	ch = chunks;
-	len = chunks * 4;
-	rest = p.len_a % 4;
+	len = chunks * 5;
+	rest = p.len_a % 5;
 	while (chunks <= len)
 	{
 		minn = min(p.a, p.len_a);
-		pr
 		const_chunk = construct_chunk(p, minn, ch);
 		while (p.len_a != 0 && p.len_b < chunks)
 		{
@@ -161,5 +160,6 @@ t_swap  sort_100(t_swap p)
 	}
 	while (p.len_a > 0 && rest--)
 		p = pb(p);
+	p = push_big(p);
 	return (p);
 }

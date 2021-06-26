@@ -52,6 +52,7 @@ t_swap  pb(t_swap p)
     int c;
 
     count++;
+     printf("pb\n");
     if (p.len_a == 0)
         return (p);
     c = p.a[0];
@@ -67,6 +68,7 @@ t_swap  ra(t_swap p)
 
     i = 0;
     count++;
+     printf("ra\n");
     c = p.a[0];
     while (i < p.len_a - 1)
     {

@@ -6,6 +6,7 @@ t_swap  rb(t_swap p)
     int i;
 
     count++;
+     printf("rb\n");
     i = 0;
     c = p.b[0];
     while (i < p.len_b - 1)
@@ -32,6 +33,7 @@ t_swap  rra(t_swap p)
 
     if (p.len_a == 0)
         return (p);
+     printf("rra\n");
     count++;
     i = 1;
     a = malloc(sizeof(int) * p.len_a);
@@ -54,6 +56,7 @@ t_swap  rrb(t_swap p)
     if (p.len_b == 0)
         return (p);
     count++;
+     printf("rrb\n");
     i = 1;
     a = malloc(sizeof(int) * p.len_b);
     while (i < p.len_b)

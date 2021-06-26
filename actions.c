@@ -5,6 +5,7 @@ t_swap  sa(t_swap p)
     int c;
 
     count++;
+    printf("sa\n");
     if (p.len_a < 2)
         return (p);
     c = p.a[0];
@@ -18,6 +19,7 @@ t_swap  sb(t_swap p)
     int c;
 
     count++;
+     printf("sb\n");
     if (p.len_b < 2)
         return (p);
     c = p.b[0];
@@ -70,6 +72,7 @@ t_swap  pa(t_swap p)
     int c;
 
     count++;
+     printf("pa\n");
     if (p.len_b == 0)
         return (p);
     c = p.b[0];

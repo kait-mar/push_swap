@@ -15,7 +15,8 @@ CC= gcc -g
 
 FLAGS= -Wall -Wextra -Werror
 
-SRCS=  main.c actions.c actions2.c actions3.c swap.c insertion.c
+SRCS=  main.c actions.c actions2.c actions3.c swap.c insertion.c \
+		sort.c
 
 OBJ = $(SRCS:.c=.o)
 
@@ -30,7 +31,7 @@ MAKINGLIBFT= cd Libft && make -f Makefile
 all: $(NAME)
 $(NAME):
 	$(MAKINGLIBFT)
-	$(CC) $(FLAGS) $(SRCS)  Libft/libft.a -o push_swap
+	$(CC) $(SRCS)  Libft/libft.a -o push_swap
 clean:
 	$(DELETEOBJ) $(DELETENAME)
 	cd Libft && make fclean -f Makefile
