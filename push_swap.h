@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "Libft/libft.h"
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
 
 typedef struct s_swap
 {
@@ -13,7 +15,17 @@ typedef struct s_swap
     int len_b;
 }           t_swap;
 
-int count;
+typedef struct s_sort
+{
+    int minn;
+    int check;
+    int chuncks;
+    int	rest;
+    int	j;
+    int i;
+    int	const_chunk;
+}       t_sort;
+
 t_swap	parse_arguments(int argc, char **argv);
 int	valid(char *arg);
 void	print_error(t_swap p);
@@ -47,5 +59,7 @@ int	from_min(int *a, int len, int m);
 t_swap  sort_100(t_swap p);
 int	construct_chunk(t_swap p, int mine, int chunk);
 t_swap  push_big(t_swap p); 
+t_swap  sort_500(t_swap p);
+t_sort	sort_core(t_sort s, t_swap p);
 
 #endif

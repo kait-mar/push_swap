@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-int min(int *a, int len)
+int	min(int *a, int len)
 {
-	int c;
-	int i;
+	int	c;
+	int	i;
 
 	i = 0;
 	c = a[0];
@@ -16,10 +16,10 @@ int min(int *a, int len)
 	return (c);
 }
 
-int max(int *a, int len)
+int	max(int *a, int len)
 {
-	int c;
-	int i;
+	int	c;
+	int	i;
 
 	i = 0;
 	c = a[0];
@@ -32,7 +32,7 @@ int max(int *a, int len)
 	return (c);
 }
 
-t_swap  swap_3elements_a(t_swap p)
+t_swap	swap_3elements_a(t_swap p)
 {
 	if (p.a[0] == max(p.a, p.len_a))
 	{
@@ -55,7 +55,7 @@ t_swap  swap_3elements_a(t_swap p)
 	return (p);
 }
 
-t_swap  swap_3elements_b(t_swap p)
+t_swap	swap_3elements_b(t_swap p)
 {
 	if (p.b[0] == max(p.b, p.len_b))
 	{

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	result(char *str, int neg, int i, int res)
+long	result(char *str, int neg, int i, long res)
 {
 	int	carac;
 
@@ -33,17 +33,17 @@ int	result(char *str, int neg, int i, int res)
 	return (res);
 }
 
-int	go_next(char str)
+long	go_next(char str)
 {
 	if ((str >= 9 && str <= 13) || str == ' ')
 		return (1);
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long		i;
-	int			res;
+	long		res;
 	int			neg;
 
 	i = 0;
