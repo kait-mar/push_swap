@@ -16,7 +16,7 @@ CC= gcc
 FLAGS= -Wall -Wextra -Werror
 
 SRCS=  main.c actions.c actions2.c actions3.c swap.c insertion.c \
-		sort.c insertion2.c push_utils.c
+		sort.c insertion2.c push_utils.c sort_5elem.c
 
 OBJ = $(SRCS:.c=.o)
 

@@ -51,8 +51,10 @@ int	valid(char *argv)
 	while (argv[i])
 	{
 		if (!((argv[i] >= '0' && argv[i] <= '9')
-			|| ((argv[i] == '-' || argv[i] == '+') && (argv[i + 1] >= '0' && argv[i + 1] <= '9')))
-			|| ((argv[i] >= '0' && argv[i] <= '9') && (argv[i + 1] == '-' || argv[i + 1] == '+')))
+				|| ((argv[i] == '-' || argv[i] == '+')
+					&& (argv[i + 1] >= '0' && argv[i + 1] <= '9')))
+			|| ((argv[i] >= '0' && argv[i] <= '9')
+				&& (argv[i + 1] == '-' || argv[i + 1] == '+')))
 			return (0);
 		i++;
 	}
@@ -66,7 +68,7 @@ t_swap	swap_5elements(t_swap p)
 	i = 2;
 	while (i--)
 		p = pb(p);
-	p = swap_3elements_a(p);;
+	p = swap_3elements_a(p);
 	p = first_5elements(p);
 	return (p);
 }

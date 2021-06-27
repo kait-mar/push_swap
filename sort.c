@@ -22,56 +22,39 @@ t_swap	push_big(t_swap p)
 	return (p);
 }
 
-t_swap  sort_500(t_swap p)
+t_sort	initialize_sort11(t_swap p)
 {
-    int i;
-	int	j;
-    int minn;
-	int	check;
-	int	chunks;
-	int	rest;
-	int	const_chunk;
-	int	len;
-	int	ch;
+	t_sort	s;
 
-	chunks = p.len_a / 11;
-	ch = chunks;
-	len = chunks * 11;
-	rest = p.len_a % 11;
-	while (chunks <= len)
+	s.chunks = p.len_a / 11;
+	s.ch = s.chunks;
+	s.len = s.chunks * 11;
+	s.rest = p.len_a % 11;
+	return (s);
+}
+
+t_swap	sort_500(t_swap p)
+{
+	t_sort	s;
+
+	s = initialize_sort11(p);
+	while (s.chunks <= s.len)
 	{
-		minn = min(p.a, p.len_a);
-		const_chunk = construct_chunk(p, minn, ch);
-		while (p.len_a != 0 && p.len_b < chunks)
+		s.minn = min(p.a, p.len_a);
+		s.const_chunk = construct_chunk(p, s.minn, s.ch);
+		while (p.len_a != 0 && p.len_b < s.chunks)
 		{
-			i = 0;
-			j = p.len_a - 1;
-			check = 0;
-			while ((i < p.len_a / 2 || j < p.len_a) || p.len_a == 1)
-			{
-				if (i < p.len_a / 2 && p.a[i] >= minn && p.a[i] <= const_chunk)
-				{
-					check = 1;
-					break ;
-				}
-				else if (j < p.len_a && p.a[j] >= minn && p.a[j] <= const_chunk)
-				{
-					check = 2;
-					break ;
-				}
-				i++;
-				j--;
-			}
-			if (check == 1)
-				p = push_to_b(p, p.a[i], check);
-			else if (check == 2)
-				p = push_to_b(p, p.a[j], check);
+			s = sort_core(s, p);
+			if (s.check == 1)
+				p = push_to_b(p, p.a[s.i], s.check);
+			else if (s.check == 2)
+				p = push_to_b(p, p.a[s.j], s.check);
 			else
 				break ;
 		}
-		chunks += ch;
+		s.chunks += s.ch;
 	}
-	while (p.len_a > 0 && rest--)
+	while (p.len_a > 0 && (s.rest)--)
 		p = pb(p);
 	p = push_big(p);
 	return (p);

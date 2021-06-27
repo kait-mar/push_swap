@@ -2,8 +2,8 @@
 
 t_swap	rb(t_swap p)
 {
-	int c;
-	int i;
+	int	c;
+	int	i;
 
 	write(1, "rb\n", 3);
 	i = 0;
@@ -66,7 +66,7 @@ t_swap	rrb(t_swap p)
 	return (p);
 }
 
-t_swap  rrr(t_swap p)
+t_swap	rrr(t_swap p)
 {
 	p = rra(p);
 	p = rrb(p);

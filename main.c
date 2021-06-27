@@ -7,45 +7,16 @@ t_swap	first_5elements(t_swap p)
 		if (p.a[0] > p.b[0])
 			p = pa(p);
 		else if (p.len_b > 0 && p.b[0] > p.a[p.len_a - 1])
-		{
-			p = rra(p);
-			p = pa(p);
-			p = sa(p);
-			p = ra(p);
-			p = ra(p);
-		}
+			p = first_51(p);
 		else if (p.b[0] > p.a[0] && p.b[0] < p.a[1])
 		{
 			p = pa(p);
 			p = sa(p);
 		}
 		else if (p.len_a == 4 && p.b[0] > p.a[1] && p.b[0] < p.a[2])
-		{
-			p = pa(p);
-			p = sa(p);
-			p = ra(p);
-			p = sa(p);
-			p = rra(p);
-		}
+			p = first_52(p);
 		else if (p.len_b > 0)
-		{
-			p = pa(p);
-			p = rra(p);
-			p = sa(p);
-			if (p.a[0] < p.a[p.len_a - 1])
-			{
-				p = rra(p);
-				p = sa(p);
-				p = ra(p);
-				p = ra(p);
-				p = ra(p);
-			}
-			else
-			{
-				p = ra(p);
-				p = ra(p);
-			}
-		}
+			p = first_53(p);
 	}
 	return (p);
 }
@@ -67,6 +38,5 @@ int	main(int argc, char **argv)
 		p = sort_100(p);
 	else if (p.len_a <= 500)
 		p = sort_500(p);
-	//while (1);
 	return (1);
 }
